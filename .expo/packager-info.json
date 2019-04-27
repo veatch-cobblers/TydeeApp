@@ -2,8 +2,9 @@
   "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 8112,
-  "expoServerNgrokUrl": "https://fb-cmd.anonymous.tydeeapp.exp.direct",
-  "packagerNgrokUrl": "https://packager.fb-cmd.anonymous.tydeeapp.exp.direct",
-  "ngrokPid": 8137
+  "packagerPid": 36732,
+  "expoServerNgrokUrl": "https://b6-gfv.anonymous.tydeeapp.exp.direct",
+  "packagerNgrokUrl": "https://packager.b6-gfv.anonymous.tydeeapp.exp.direct",
+  "ngrokPid": 36749,
+  "webpackServerPort": null
 }
