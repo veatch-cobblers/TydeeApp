@@ -8,19 +8,18 @@ import {
     TouchableOpacity,
     View,
   } from 'react-native';
-  import EventGrid from '../components/EventGrid'
-  import {Button } from 'react-native-elements'
-  import { WebBrowser } from 'expo';
+  import EventGrid from '../components/EventGrid';
+  import {Button } from 'react-native-elements';
 
 
   export default class HomeScreen extends React.Component {
  
     render(){
         return(
-            <View style={styles.container}>
+            <View>
 
-            <View style={styles.startGrid}>
-                <View style={styles.startButton}>
+            <View>
+                <View>
                 <Button    
                 icon={{name: "add", type:"material", color:'white'}}  
                 title="Start Event"
@@ -31,37 +30,33 @@ import {
             </View>
 
             
-            
- 
-           
-            
-
+            <EventGrid/>
             </View>
         )
     }
 
 }
 
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'space-evenly',
-    },
-    startGrid: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
+// const styles = StyleSheet.create({
+//     container: {
+//       flex: 1,
+//       flexDirection: 'column',
+//       alignItems: 'center',
+//       justifyContent: 'space-evenly',
+//     },
+//     startGrid: {
+//         display: 'flex',
+//         flexDirection: 'column',
+//         alignItems: 'center',
+//         justifyContent: 'center',
 
-    },
-    startButton:{    
-        width: 250,
-        height: 200,
-    },
-    eventsListGrid:{
+//     },
+//     startButton:{    
+//         width: 250,
+//         height: 200,
+//     },
+//     eventsListGrid:{
 
-    }
+//     }
     
-  });
+//   });
