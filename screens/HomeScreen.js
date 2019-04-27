@@ -63,16 +63,14 @@ const styles = StyleSheet.create({
       justifyContent: 'space-evenly',
     },
     logo:{
-        flex:1,
-        width: 250,
+        width: 450,
+        height: 250,
         resizeMode: 'contain',  
     },
     startGrid: {
-        // display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-
     },
     startButton:{    
         width: 250,
