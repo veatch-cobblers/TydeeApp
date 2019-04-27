@@ -1,11 +1,18 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground } from 'react-native';
 import HomeScreen from './screens/HomeScreen'
 
 export default class App extends React.Component {
   render() {
     return (
-      <HomeScreen/>
+      <ImageBackground opacity={0.6}
+              source={
+                  require('./assets/sea.jpg')
+              }
+              style={styles.homeBackground}
+              >
+        <HomeScreen/>
+      </ImageBackground>
       // <View style={styles.container}>
       //   <Text>Open up App.js to start working on your app!</Text>
       // </View>
@@ -14,10 +21,8 @@ export default class App extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  homeBackground:{
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    resizeMode: 'cover'
+}
 });
