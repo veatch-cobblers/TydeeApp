@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, ImageBackground } from 'react-native';
 import HomeScreen from './screens/HomeScreen'
+import AppNav from './navigator/mainNavigator'
 
 export default class App extends React.Component {
   render() {
@@ -11,11 +12,8 @@ export default class App extends React.Component {
               }
               style={styles.homeBackground}
               >
-        <HomeScreen/>
+        <AppNav />
       </ImageBackground>
-      // <View style={styles.container}>
-      //   <Text>Open up App.js to start working on your app!</Text>
-      // </View>
     );
   }
 }

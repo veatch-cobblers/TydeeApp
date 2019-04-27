@@ -1,10 +1,10 @@
 {
   "devToolsPort": 19002,
   "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 36732,
-  "expoServerNgrokUrl": "https://b6-gfv.anonymous.tydeeapp.exp.direct",
-  "packagerNgrokUrl": "https://packager.b6-gfv.anonymous.tydeeapp.exp.direct",
-  "ngrokPid": 36749,
+  "packagerPort": 19003,
+  "packagerPid": 9235,
+  "expoServerNgrokUrl": "https://nv-b7b.anonymous.tydeeapp.exp.direct",
+  "packagerNgrokUrl": "https://packager.nv-b7b.anonymous.tydeeapp.exp.direct",
+  "ngrokPid": 9265,
   "webpackServerPort": null
 }

@@ -14,27 +14,40 @@ import {
 
 
   export default class HomeScreen extends React.Component {
+
  
     render(){
+        const {navigate} = this.props.navigation;
         return(
+
             <View style={styles.container}>
+            <View>
+                <Image
+                source={
+                    require('../assets/logo.png')
+                }
+                style={styles.logo}>
+
+                </Image>
+            </View>
 
             <View style={styles.startGrid}>
                 <View style={styles.startButton}>
                 <Button    
                 icon={{name: "add", type:"material", color:'white'}}  
                 title="Start Event"
-                onPress={() => console.log("BUTTON CLICKED")}
+                onPress={() => navigate('Camera')}
                 iconRight
+                raised
                 /> 
                 </View>
             </View>
-
             
-            
- 
-           
-            
+            <View>
+                <Text>
+                    Jhkdjhfkjhdsfkjh
+                </Text>
+            </View>
 
             </View>
         )
@@ -49,8 +62,13 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'space-evenly',
     },
+    logo:{
+        flex:1,
+        width: 250,
+        resizeMode: 'contain',  
+    },
     startGrid: {
-        display: 'flex',
+        // display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
