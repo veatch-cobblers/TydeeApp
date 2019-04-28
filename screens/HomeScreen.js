@@ -14,6 +14,9 @@ import { Divider, Button } from "react-native-elements";
 export default class HomeScreen extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
+    const eventName = this.props.navigation.getParam("_fullEventName", null);
+    const fulllocation = this.props.navigation.getParam("_fullLocation", null);
+
     return (
       <View style={styles.container}>
         <View>
@@ -51,7 +54,7 @@ export default class HomeScreen extends React.Component {
               }}
             />
           </View>
-          <EventGrid />
+          <EventGrid eventName={eventName} eventLocation={fulllocation}/>
         </View>
 
         <View>
@@ -61,7 +64,6 @@ export default class HomeScreen extends React.Component {
               title="Start Event"
               onPress={() => navigate("EventDetails")}
               iconRight
-            //   rounded
             />
           </View>
         </View>

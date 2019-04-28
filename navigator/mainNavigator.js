@@ -4,13 +4,15 @@ import CameraScreen from '../screens/CameraScreen';
 import GalleryScreen from '../screens/GalleryScreen';
 import EventDetailsScreen from '../screens/EventDetailsScreen';
 import EventScreen from '../screens/EventScreen'
+import DoneScreen from '../screens/DoneScreen'
 
 const MainNavigator = createStackNavigator({
   Home: {screen: HomeScreen},
   Camera: {screen: CameraScreen},
   Gallery: {screen: GalleryScreen},
   EventDetails: {screen: EventDetailsScreen},
-  Event: {screen: EventScreen}
+  Event: {screen: EventScreen},
+  Done: {screen: DoneScreen}
 },
 {
     initialRouteName: 'Home',

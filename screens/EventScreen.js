@@ -42,19 +42,28 @@ export default class EventScreen extends Component {
     );
     const user = "Jim";
     const fullEventName = user + "'s " + eventName;
+    console.log(location)
+    const fullLocation = location[0].street +", "+ location[0].city;
     displayableImage = this.renderPhoto(photo);
     return (
       <View style={styles.container}>
+        <View style={styles.bodyContainer}>
         <View>
           <Text h4 style={styles.textStyle}>
-            {" "}
             Event: {fullEventName}
+          </Text>
+        </View>
+
+        <View>
+          <Text h5 style={styles.textStyle}>
+            Location: {location[0].street}, {location[0].city}
           </Text>
         </View>
 
         <View style={{transform: [{ "rotate": "270deg" }]}}>{displayableImage}</View>
 
-        <Text h4>TIME REMAINING</Text>
+        <Text h4 style={styles.textStyle}>TIME REMAINING</Text>
+        <View style={styles.countdownBack}>
         <TimerCountdown
           color="white"
           initialMilliseconds={1440000 * 60}
@@ -74,14 +83,32 @@ export default class EventScreen extends Component {
           allowFontScaling={true}
           style={{ fontSize: 50 }}
         />
+        </View>
+        </View>
         <View style={styles.button}>
           <Button
-            title="Finish"
-            onPress={() => navigate("Home")}
+            title="CLEAN UP COMPLETE!"
+            onPress={() => navigate("Done", {
+              firstPhoto: photo
+            })}
             iconRight
-            //   rounded
           />
+          
         </View>
+        <View style={styles.button}>
+        <Button
+            title="HOME"
+            onPress={() => navigate("Home", {
+              _eventName: eventName,
+              _fullEventName: fullEventName,
+              _isPrivateEvent: isPrivateEvent,
+              _photoObj: photo,
+              _location: location,
+              _fullLocation: fullLocation
+            })}
+            iconRight
+          />
+          </View>
       </View>
     );
   }
@@ -99,5 +126,16 @@ const styles = StyleSheet.create({
   },
   textStyle: {
     color: "white"
+  },countdownBack: {
+    backgroundColor: 'white',
+    borderRadius: 25,
+    padding: 20
+  },
+  bodyContainer: {
+    backgroundColor: 'rgba(0,0,0,0.4)',
+    padding: 20,
+    borderRadius: 15,
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 });

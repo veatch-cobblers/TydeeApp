@@ -168,7 +168,12 @@ export default class CameraScreen extends React.Component {
   }
 
   renderGallery() {
-    this.props.navigation.navigate('Gallery');
+    this.props.navigation.navigate('Gallery', {
+      originalPhoto: this.props.navigation.getParam(
+        "firstPhot",
+        null
+      )
+    });
     //return <GalleryScreen onPress={this.toggleView.bind(this)} />;
   }
 

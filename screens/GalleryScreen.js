@@ -13,6 +13,7 @@ export default class GalleryScreen extends React.Component {
     images: {},
     photos: [],
     selected: [],
+    destination: 'EventDetails'
   };
 
   componentDidMount = async () => {
@@ -47,17 +48,28 @@ export default class GalleryScreen extends React.Component {
       uri={`${PHOTOS_DIR}/${fileName}`}
     />;
 
+    resolveDestination = (oldPhoto) => {
+      console.log("INSIDE DESTINATION REOLVER")
+      if(oldPhoto != null){
+        this.setState({destination : 'Done'})
+      }
+    }
+
 
   render() {
     const {navigate} = this.props.navigation;
+    const oldPhoto = this.props.navigation.getParam('originalPhoto', null);
+    this.resolveDestination(oldPhoto)
+    
     return (
       <View style={styles.container}>
         <View style={styles.navbar}>
           <TouchableOpacity style={styles.button} onPress={() => navigate('Camera')}>
             <Text style={styles.whiteText}>Try Again</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={() => navigate('EventDetails', {
-              photo: this.state.photos[this.state.photos.length - 1]
+          <TouchableOpacity style={styles.button} onPress={() => navigate(this.state.destination, {
+              // photo: this.state.photos[this.state.photos.length]
+              photo: this.state.photos[0]
             }
           )}>
             <Text style={styles.whiteText}>Confirm Photo</Text>
@@ -65,7 +77,8 @@ export default class GalleryScreen extends React.Component {
         </View>
         <ScrollView contentComponentStyle={{ flex: 1 }}>
           <View style={styles.pictures}>
-            {this.renderPhoto(this.state.photos[this.state.photos.length - 1])}
+            {/* {this.renderPhoto(this.state.photos[this.state.photos.length])} */}
+            {this.renderPhoto(this.state.photos[0])}
           </View>
         </ScrollView>
       </View>

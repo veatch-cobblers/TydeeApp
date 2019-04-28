@@ -4,57 +4,43 @@ import {View, Text, FlatList, StyleSheet} from 'react-native'
 
 const list = [
   {
-    name: 'Amy Farha',
-    subtitle: 'Vice President'
+    name: "Amy's Beach Cleanup",
+    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+    subtitle: 'South Las Vegas Boulevard, Las Vegas',
+    distance: '0.1 miles'
   },
   {
-    name: 'Chris Jackson',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
-    subtitle: 'Vice Chairman'
+    name: "Chris's Beach Cleanup",
+    // avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+    subtitle: 'South Las Vegas Boulevard, Las Vegas',
+    distance: '0.1 miles'
   },{
-    name: 'Amy Farha',
-    subtitle: 'Vice President'
+    name: "Jamie's Habitat Clean",
+    subtitle: 'North Las Vegas Boulevard, Las Vegas',
+    distance: '3.2 miles'
   },
   {
-    name: 'Chris Jackson',
+    name: "Don's summer clean",
     avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
-    subtitle: 'Vice Chairman'
+    subtitle: 'North Las Vegas Boulevard, Las Vegas',
+    distance: '3.2 miles'
   },{
-    name: 'Amy Farha',
-    subtitle: 'Vice President'
-  },
-  {
-    name: 'Chris Jackson',
+    name: "Sarah's Help Clean",
     avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
-    subtitle: 'Vice Chairman'
-  },{
-    name: 'Amy Farha',
-    subtitle: 'Vice President'
+    subtitle: 'East Las Vegas Boulevard, Las Vegas',
+    distance: '5.2 miles'
   },
-  {
-    name: 'Chris Jackson',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
-    subtitle: 'Vice Chairman'
-  },{
-    name: 'Amy Farha',
-    subtitle: 'Vice President'
-  },
-  {
-    name: 'Chris Jackson',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
-    subtitle: 'Vice Chairman'
-  },{
-    name: 'Amy Farha',
-    subtitle: 'Vice President'
-  },
-  {
-    name: 'Chris Jackson',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
-    subtitle: 'Vice Chairman'
-  },
+  
+ 
 ]
 
 export default class EventGrid extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      list: list,
+    }
+  }
   keyExtractor = (item, index) => index.toString()
 
   renderItem = ({ item }) => {
@@ -66,17 +52,35 @@ export default class EventGrid extends React.Component{
         source: item.avatar_url && { uri: item.avatar_url },
         title: item.name[0]
       }}
+      badge={{ value: item.distance, textStyle: { color: 'white' }, containerStyle: { marginTop: -20 } }}
       
     />
     return result
 
   }
+
+  addEvent = ({event}) => {
+    console.log("INSIDE ADD EVENT")
+    const list_items = this.state.list.slice();
+    list_items.unshift({name: 'Test TestLast',
+    subtitle: 'Vice President',
+    distance: '5.1 miles'})
+    this.setState({
+      list: list_items
+    })
+  }
   
   render () {
+    // if(this.props.eventName != null || this.props.fulllocation != null){
+    //   console.log("INSIDE THE CONDITION CHECK");
+    //   this.addEvent({name: this.props.eventName,
+    //   location: this.props.fulllocation,
+    //   distance: '0.0 miles'})
+    // }
     return (
       <FlatList
         keyExtractor={this.keyExtractor}
-        data={list}
+        data={this.state.list}
         renderItem={this.renderItem}
       />
     )
