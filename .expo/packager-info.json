@@ -1,9 +1,18 @@
 {
   "expoServerPort": 19000,
+<<<<<<< HEAD
   "expoServerNgrokUrl": "https://u2-kda.anonymous.tydeeapp.exp.direct",
   "packagerNgrokUrl": "https://packager.u2-kda.anonymous.tydeeapp.exp.direct",
   "ngrokPid": 11662,
   "devToolsPort": 19002,
   "packagerPort": 19005,
   "packagerPid": 11627
+=======
+  "expoServerNgrokUrl": "https://je-r4e.anonymous.tydeeapp.exp.direct",
+  "packagerNgrokUrl": "https://packager.je-r4e.anonymous.tydeeapp.exp.direct",
+  "ngrokPid": 44869,
+  "devToolsPort": 19002,
+  "packagerPort": 19004,
+  "packagerPid": 44845
+>>>>>>> origin/event-screen
 }

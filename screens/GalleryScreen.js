@@ -47,6 +47,7 @@ export default class GalleryScreen extends React.Component {
       uri={`${PHOTOS_DIR}/${fileName}`}
     />;
 
+
   render() {
     const {navigate} = this.props.navigation;
     return (
@@ -56,7 +57,7 @@ export default class GalleryScreen extends React.Component {
             <Text style={styles.whiteText}>Try Again</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button} onPress={() => navigate('Event', {
-              photo: this.state.photos[0]
+              photo: this.state.photos[this.state.photos.length - 1]
             }
           )}>
             <Text style={styles.whiteText}>Confirm Photo</Text>
@@ -64,7 +65,7 @@ export default class GalleryScreen extends React.Component {
         </View>
         <ScrollView contentComponentStyle={{ flex: 1 }}>
           <View style={styles.pictures}>
-            {this.renderPhoto(this.state.photos[0])}
+            {this.renderPhoto(this.state.photos[this.state.photos.length - 1])}
           </View>
         </ScrollView>
       </View>

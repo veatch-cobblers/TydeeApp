@@ -239,7 +239,7 @@ export default class CameraScreen extends React.Component {
   renderNoPermissions = () => 
     <View style={styles.noPermissions}>
       <Text style={{ color: 'white' }}>
-        Camera permissions not granted - cannot open camera preview.
+        {/* Camera permissions not granted - cannot open camera preview. */}
       </Text>
     </View>
 
