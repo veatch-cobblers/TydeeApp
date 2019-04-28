@@ -102,12 +102,6 @@ export default class EventScreen extends Component {
                     selectionColor='white'
                     placeholder='Location'
                 />
-
-                <View>
-                    <Text>
-                        {LocText}
-                    </Text>
-                </View>
                
                 <View style={styles.button}>
                     <Button
