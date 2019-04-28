@@ -1,9 +1,9 @@
 {
   "expoServerPort": 19000,
-  "expoServerNgrokUrl": "https://nv-b7b.anonymous.tydeeapp.exp.direct",
-  "packagerNgrokUrl": "https://packager.nv-b7b.anonymous.tydeeapp.exp.direct",
-  "ngrokPid": 10712,
+  "expoServerNgrokUrl": "https://u2-kda.anonymous.tydeeapp.exp.direct",
+  "packagerNgrokUrl": "https://packager.u2-kda.anonymous.tydeeapp.exp.direct",
+  "ngrokPid": 11224,
   "devToolsPort": 19002,
-  "packagerPort": 19004,
-  "packagerPid": 10682
+  "packagerPort": 19005,
+  "packagerPid": 11188
 }
