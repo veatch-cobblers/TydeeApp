@@ -3,7 +3,7 @@ import { Image, StyleSheet, View, TouchableOpacity, Text } from 'react-native';
 import { FaceDetector } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
 
-const pictureSize = 520;
+const pictureSize = 300;
 
 export default class Photo extends React.Component {
   state = {

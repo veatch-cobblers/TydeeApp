@@ -19,17 +19,10 @@ export default class EventScreen extends Component {
 
     renderPhoto = fileName =>
         <Photo style={{
-            width: 125,
-            height: 125,
-            alignItems: 'center',
-            justifyContent: 'center',
-            margin: 5,
-            position: 'absolute',
-            bottom: 0,
-            right: 0,
-            left: 0,
-            top: 0,
-            resizeMode: 'contain',
+            flex: 1,
+    width: null,
+    height: null,
+    resizeMode: 'contain'
           }}
             key={fileName}
             uri={`${PHOTOS_DIR}/${fileName}`}
@@ -45,8 +38,7 @@ export default class EventScreen extends Component {
             displayableElement = <TouchableOpacity
             onPress={() => navigate('Camera')}
             style={{
-                display: 'flex', justifyContent: 'center', alignItems: 'center', alignSelf: 'center', borderWidth: 2,
-                borderColor: 'black',
+                transform: [{ rotate: -1.58}]
             }}
         >
             <View>
