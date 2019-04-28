@@ -1,1 +1,9 @@
-{}
+{
+  "expoServerPort": 19000,
+  "expoServerNgrokUrl": "https://je-r4e.anonymous.tydeeapp.exp.direct",
+  "packagerNgrokUrl": "https://packager.je-r4e.anonymous.tydeeapp.exp.direct",
+  "ngrokPid": 47303,
+  "devToolsPort": 19002,
+  "packagerPort": 19006,
+  "packagerPid": 47273
+}
