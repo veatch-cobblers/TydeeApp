@@ -20,16 +20,6 @@ export default class GalleryScreen extends React.Component {
     this.setState({ photos });
   };
 
-  toggleSelection = (uri, isSelected) => {
-    let selected = this.state.selected;
-    if (isSelected) {
-      selected.push(uri);
-    } else {
-      selected = selected.filter(item => item !== uri);
-    }
-    this.setState({ selected });
-  };
-
   saveToGallery = async () => {
     const photos = this.state.selected;
 
@@ -55,21 +45,20 @@ export default class GalleryScreen extends React.Component {
     <Photo
       key={fileName}
       uri={`${PHOTOS_DIR}/${fileName}`}
-      onSelectionToggle={this.toggleSelection}
     />;
 
-   renderHomeScreen() {
-        return <HomeScreen/>;
-    }
-
   render() {
+    const {navigate} = this.props.navigation;
     return (
       <View style={styles.container}>
         <View style={styles.navbar}>
-          <TouchableOpacity style={styles.button} onPress={this.props.onPress}>
+          <TouchableOpacity style={styles.button} onPress={() => navigate('Camera')}>
             <Text style={styles.whiteText}>Try Again</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={this.renderHomeScreen}>
+          <TouchableOpacity style={styles.button} onPress={() => navigate('Event', {
+              photo: this.state.photos[0]
+            }
+          )}>
             <Text style={styles.whiteText}>Confirm Photo</Text>
           </TouchableOpacity>
         </View>

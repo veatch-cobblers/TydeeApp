@@ -21,13 +21,6 @@ export default class Photo extends React.Component {
     this._mounted = false;
   }
 
-  toggleSelection = () => {
-    this.setState(
-      { selected: !this.state.selected },
-      () => this.props.onSelectionToggle(this.props.uri, this.state.selected)
-    );
-  }
-
   detectFace = () =>
     FaceDetector.detectFacesAsync(this.props.uri, {
       detectLandmarks: FaceDetector.Constants.Landmarks.none,
@@ -105,7 +98,6 @@ export default class Photo extends React.Component {
         <TouchableOpacity
           style={styles.pictureWrapper}
           onLongPress={this.detectFace}
-          onPress={this.toggleSelection}
           activeOpacity={1}
         >
           <Image

@@ -90,8 +90,6 @@ export default class CameraScreen extends React.Component {
     return ratios;
   };
 
-  toggleView = () => this.setState({ showGallery: !this.state.showGallery, newPhotos: false });
-
   toggleMoreOptions = () => this.setState({ showMoreOptions: !this.state.showMoreOptions });
 
   toggleFacing = () => this.setState({ type: this.state.type === 'back' ? 'front' : 'back' });
@@ -128,7 +126,7 @@ export default class CameraScreen extends React.Component {
       to: `${FileSystem.documentDirectory}photos/${Date.now()}.jpg`,
     });
     this.setState({ newPhotos: true });
-    this.toggleView();
+    this.renderGallery();
   }
 
   onBarCodeScanned = code => {
@@ -170,7 +168,8 @@ export default class CameraScreen extends React.Component {
   }
 
   renderGallery() {
-    return <GalleryScreen onPress={this.toggleView.bind(this)} />;
+    this.props.navigation.navigate('Gallery');
+    //return <GalleryScreen onPress={this.toggleView.bind(this)} />;
   }
 
   renderFace({ bounds, faceID, rollAngle, yawAngle }) {
@@ -275,7 +274,7 @@ export default class CameraScreen extends React.Component {
           <Ionicons name="ios-radio-button-on" size={70} color="white" />
         </TouchableOpacity>
       </View> 
-      <TouchableOpacity style={styles.bottomButton} onPress={this.toggleView}>
+      <TouchableOpacity style={styles.bottomButton} onPress={() => this.renderGallery()}>
         <View>
           <Foundation name="thumbnails" size={30} color="white" />
           {this.state.newPhotos && <View style={styles.newPhotosDot}/>}
@@ -349,6 +348,7 @@ export default class CameraScreen extends React.Component {
     );
 
   render() {
+    const {navigate} = this.props.navigation;
     const cameraScreenContent = this.state.permissionsGranted
       ? this.renderCamera()
       : this.renderNoPermissions();
