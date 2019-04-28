@@ -59,7 +59,7 @@ export default class HomeScreen extends React.Component {
             <Button
               icon={{ name: "add", type: "material", color: "white" }}
               title="Start Event"
-              onPress={() => navigate("Event")}
+              onPress={() => navigate("EventDetails")}
               iconRight
             //   rounded
             />

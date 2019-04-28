@@ -56,7 +56,7 @@ export default class GalleryScreen extends React.Component {
           <TouchableOpacity style={styles.button} onPress={() => navigate('Camera')}>
             <Text style={styles.whiteText}>Try Again</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={() => navigate('Event', {
+          <TouchableOpacity style={styles.button} onPress={() => navigate('EventDetails', {
               photo: this.state.photos[this.state.photos.length - 1]
             }
           )}>

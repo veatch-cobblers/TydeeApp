@@ -1,7 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View, ImageBackground } from 'react-native';
-import HomeScreen from './screens/HomeScreen'
 import AppNav from './navigator/mainNavigator'
+
+
+
 
 export default class App extends React.Component {
   render() {

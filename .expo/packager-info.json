@@ -2,9 +2,8 @@
   "expoServerPort": 19000,
   "expoServerNgrokUrl": "https://au-3yr.anonymous.tydeeapp.exp.direct",
   "packagerNgrokUrl": "https://packager.au-3yr.anonymous.tydeeapp.exp.direct",
-  "ngrokPid": 11929,
-  "packagerPort": 19006,
-  "packagerPid": 11884,
-  "webpackServerPort": null,
-  "devToolsPort": 19002
+  "ngrokPid": 12658,
+  "devToolsPort": 19002,
+  "packagerPort": 19007,
+  "packagerPid": 12606
 }
