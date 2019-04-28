@@ -8,9 +8,8 @@ import {
     TouchableOpacity,
     View,
   } from 'react-native';
-  import EventGrid from '../components/EventGrid'
-  import {Button } from 'react-native-elements'
-  import { WebBrowser } from 'expo';
+  import EventGrid from '../components/EventGrid';
+  import {Button } from 'react-native-elements';
 
 
   export default class HomeScreen extends React.Component {
@@ -31,8 +30,8 @@ import {
                 </Image>
             </View>
 
-            <View style={styles.startGrid}>
-                <View style={styles.startButton}>
+            <View>
+                <View>
                 <Button    
                 icon={{name: "add", type:"material", color:'white'}}  
                 title="Start Event"
@@ -43,11 +42,11 @@ import {
                 </View>
             </View>
             
-            <View>
-                <Text>
-                    Jhkdjhfkjhdsfkjh
-                </Text>
-            </View>
+            {/* <View style={styles.eventsListGrid}>
+                <EventGrid/>
+            </View> */}
+
+            
 
             </View>
         )
