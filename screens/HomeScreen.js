@@ -1,82 +1,98 @@
-import React from 'react';
+import React from "react";
 import {
-    Image,
-    Platform,
-    ScrollView,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
-  } from 'react-native';
-  import EventGrid from '../components/EventGrid';
-  import {Button } from 'react-native-elements';
+  Image,
+  Platform,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View
+} from "react-native";
+import EventGrid from "../components/EventGrid";
+import { Divider, Button } from "react-native-elements";
 
+export default class HomeScreen extends React.Component {
+  render() {
+    const { navigate } = this.props.navigation;
+    return (
+      <View style={styles.container}>
+        <View>
+          <Image source={require("../assets/logo.png")} style={styles.logo} />
+        </View>
 
-  export default class HomeScreen extends React.Component {
+        
 
- 
-    render(){
-        const {navigate} = this.props.navigation;
-        return(
+        <View style={styles.eventsListGrid}>
+          <View style={{ flexDirection: "row", paddingBottom: 15 }}>
+            <View
+              style={{
+                backgroundColor: "white",
+                height: 2,
+                flex: 1,
+                alignSelf: "center"
+              }}
+            />
+            <Text
+              style={{
+                alignSelf: "center",
+                paddingHorizontal: 5,
+                fontSize: 24,
+                color: "white"
+              }}
+            >
+              Events Near Me
+            </Text>
+            <View
+              style={{
+                backgroundColor: "white",
+                height: 2,
+                flex: 1,
+                alignSelf: "center"
+              }}
+            />
+          </View>
+          <EventGrid />
+        </View>
 
-            <View style={styles.container}>
-            <View>
-                <Image
-                source={
-                    require('../assets/logo.png')
-                }
-                style={styles.logo}>
-
-                </Image>
-            </View>
-
-            <View>
-                <View>
-                <Button    
-                icon={{name: "add", type:"material", color:'white'}}  
-                title="Start Event"
-                onPress={() => navigate('Camera')}
-                iconRight
-                raised
-                /> 
-                </View>
-            </View>
-            
-            {/* <View style={styles.eventsListGrid}>
-                <EventGrid/>
-            </View> */}
-
-            
-
-            </View>
-        )
-    }
-
+        <View>
+          <View style={styles.startButton}>
+            <Button
+              icon={{ name: "add", type: "material", color: "white" }}
+              title="Start Event"
+              onPress={() => navigate("Camera")}
+              iconRight
+            //   rounded
+            />
+          </View>
+        </View>
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'space-evenly',
-    },
-    logo:{
-        width: 450,
-        height: 250,
-        resizeMode: 'contain',  
-    },
-    startGrid: {
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    startButton:{    
-        width: 250,
-        height: 200,
-    },
-    eventsListGrid:{
-
-    }
-    
-  });
+  container: {
+    flex: 1,
+    flexDirection: "column",
+    alignItems: "center",
+    // justifyContent: "space-evenly"
+  },
+  logo: {
+    width: 490,
+    height: 250,
+    resizeMode: "center",
+  },
+  startGrid: {
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  startButton: {
+    width: 385,
+    height: 90
+  },
+  eventsListGrid: {
+    flex: 3,
+    paddingBottom: 20
+  }
+});

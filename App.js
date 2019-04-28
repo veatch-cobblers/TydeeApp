@@ -6,7 +6,7 @@ import AppNav from './navigator/mainNavigator'
 export default class App extends React.Component {
   render() {
     return (
-      <ImageBackground opacity={0.6}
+      <ImageBackground opacity={0.8}
               source={
                   require('./assets/sea.jpg')
               }
